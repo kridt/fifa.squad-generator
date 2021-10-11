@@ -1,7 +1,6 @@
 import { Link } from '@reach/router';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import CardTemp from '../components/CardTemp'
 require('dotenv').config()
 export default function Start() {
     const apiKey = process.env.React_App_API_KEY;
@@ -14,7 +13,7 @@ export default function Start() {
             }
         })
         .then((response) => setPlayers(response.data))
-    }, [setPlayers])
+    }, [setPlayers, apiKey])
     
     console.log(players);
     /* useEffect(()=>{
